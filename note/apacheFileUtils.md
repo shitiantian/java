@@ -5,15 +5,15 @@
 - 1.后台系统上传了banner图之类的图片或者视频文档等需要存储到缓存服务器/对象存储服务器之类的地方,并且在数据库中记录存放地址的。
 - 2.批量上传新增功能，上传csv/txt/excel之类的，直接读取相关数据存入数据库的。
 # 目录
-- [1.Maven需要引用的相关的包](#Maven需要引用的相关的包)
-- [2.FileUtils读API](#FileUtils读API)
-- [3.FileUtils写API](#FileUtils写API)
-- [4.FileUtils删除API](#FileUtils删除API)
-- [5.FileUtils创建API](#FileUtils创建API)
-- [6.FileUtils复制，移动（剪切)API](#FileUtils复制，移动)
-- [7.FileUtils的其他方法](#FileUtils的其他方法)
+- [1.Maven需要引用的相关的包](#1)
+- [2.FileUtils读API](#2)
+- [3.FileUtils写API](#3)
+- [4.FileUtils删除API](#4)
+- [5.FileUtils创建API](#5)
+- [6.FileUtils复制，移动（剪切)API](#6)
+- [7.FileUtils的其他方法](#7)
 - [8.对文件的过滤处理](#8)
-## **一.Maven需要引用的相关的包**
+## **<span id="1">一.Maven需要引用的相关的包</span>**
 ```java
         <!-- 上传组件包 -->
         <dependency>
@@ -22,7 +22,7 @@
             <version>2.4</version>
         </dependency>
 ```
-## **二.FileUtils读API**
+## **<span id="2">二.FileUtils读API</span>**
 读取文本文件的所有行到一个集合  
  ```java
         List<String> lines=FileUtils.readLines(new File("D:/fileUtis/aa.txt"),"utf-8"); 
@@ -35,7 +35,7 @@
  ```java
         FileUtils.readFileToByteArray(new File("D:/fileUtis/aa.txt")); 
 ``` 
-## **三.FileUtils写API**
+## **<span id="3">三.FileUtils写API</span>**
 将字符写入到一个文件，文件不存在会创建；第三个参数：true：追加，false：覆盖  
  ```java
          FileUtils.write(new File("D:/fileUtis/targetFile/aa.txt"),"aa",false);  
@@ -58,7 +58,7 @@
  ```java
         FileUtils.writeLines(new File("D:/fileUtis/targetFile/ee.txt"), "utf-8", ss,true);
 ``` 
-## **四.FileUtils删除API**
+## **<span id="4">四.FileUtils删除API</span>**
 删除一个目录和他的所有子目录，如果文件或者目录不存在会抛出异常  
  ```java
         FileUtils.deleteDirectory(new File("D:/fileUtis/targetFile/"));
@@ -75,7 +75,7 @@
  ```java
         FileUtils.forceDelete(new File("D:/fileUtis/targetFile/"));   
 ``` 
-## **五.FileUtils创建API**
+## **<span id="5">五.FileUtils创建API</span>**
 创建一个目录，可以递归创建，只要不为null   
  ```java
         FileUtils.forceMkdir(new File("D:/fileUtis/targetFile/aa"));  
@@ -84,7 +84,7 @@
  ```java
         FileUtils.touch(new File("D:/fileUtis/targetFile/Liftoff.java"));  
 ``` 
-## **六.FileUtils复制，移动（剪切)API**
+## **<span id="6">六.FileUtils复制，移动（剪切)API</span>**
 复制目录   
  ```java
         File dataFile=new File("D:/fileUtis/dataFile");  
@@ -119,7 +119,7 @@
 ```java
         FileUtils.moveFile(srcFile, destFile);
 ``` 
-## **七.FileUtils的其他方法**
+## **<span id="7">七.FileUtils的其他方法</span>**
 获取一个目录的大小
  ```java
         FileUtils.sizeOfDirectory(file); 
