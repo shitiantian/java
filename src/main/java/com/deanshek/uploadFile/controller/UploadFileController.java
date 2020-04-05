@@ -1,6 +1,10 @@
 package com.deanshek.uploadFile.controller;
 
+import com.deanshek.uploadFile.entity.UploadFile;
+import com.deanshek.uploadFile.service.UploadFileService;
+import com.deanshek.uploadFile.service.UploadFileServiceImpl;
 import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -10,9 +14,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
-
+/**
+ * @ClassName UploadFileController
+ * @Author deanshek
+ * @Date 2020-04-04 22:06
+ * @Wechat s71t28
+ * @Version 1.0
+ **/
 @Controller
-public class uploadFileController {
+public class UploadFileController {
+
+    @Autowired
+    private UploadFileServiceImpl uploadFileService;
 
     @RequestMapping("/upload/page")
     public String  page() {
@@ -20,7 +33,7 @@ public class uploadFileController {
     }
     @RequestMapping("/upload")
     @ResponseBody
-     public String   upload(MultipartFile upload, HttpServletRequest request) throws IOException {
+     public String upload(MultipartFile upload, HttpServletRequest request) throws IOException {
 
         // 获取上传文件的名称
         String filename = upload.getOriginalFilename();
@@ -49,7 +62,7 @@ public class uploadFileController {
         //将本地临时文件上传到缓存服务器/对象存储服务器，比如阿里云oss里
         String ossPath = "";
         try {
-//          ossPath = ossUtils.upload(new File(path,filename));
+          ossPath = uploadFileService.upload(new File(path,filename));
         } catch (Exception e) {
             return "上传oss失败.具体原因:"+e;
         }
@@ -60,9 +73,9 @@ public class uploadFileController {
         }
 
         //将文件服务器的地址存到数据库里
-//        UploadFile  uploadFile = new UploadFile();
-//        uploadFile.setOssPath(ossPath);
-//        uploadService.insert(uploadFile);
+        UploadFile uploadFile = new UploadFile();
+        uploadFile.setPath(ossPath);
+        uploadFileService.insert(uploadFile);
         return "success";
     }
 }

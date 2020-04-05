@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.deanshek.uploadFile.dao.uploadFileDao">
+<mapper namespace="com.deanshek.uploadFile.dao.UploadFileDao">
 
-    <insert id="save" parameterType="com.deanshek.uploadFile.entity.uploadFile">
+    <insert id="save" parameterType="com.deanshek.uploadFile.entity.UploadFile">
         INSERT INTO uploadFile
         (
         room_name,
@@ -16,7 +16,7 @@
         )
     </insert>
 
-    <select id="queryById" resultType="com.deanshek.uploadFile.entity.uploadFile">
+    <select id="queryById" resultType="com.deanshek.uploadFile.entity.UploadFile">
         SELECT id id,room_name roomName,room_code roomCode,status status FROM uploadFile
         <where>
             id = #{id}
@@ -34,7 +34,7 @@
         </where>
     </update>
 
-    <select id="queryAll" resultType="com.deanshek.uploadFile.entity.uploadFile">
+    <select id="queryAll" resultType="com.deanshek.uploadFile.entity.UploadFile">
         SELECT id id,room_name roomName,room_code roomCode,status status FROM uploadFile
     </select>
 

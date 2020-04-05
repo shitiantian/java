@@ -1,4 +1,4 @@
 package com.deanshek.uploadFile.dao;
 
-public interface uploadFileDao {
+public interface UploadFileDao {
 }

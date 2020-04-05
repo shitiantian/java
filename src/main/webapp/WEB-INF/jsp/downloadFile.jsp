@@ -3,10 +3,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>首页</title>
+    <title>文件下载</title>
 </head>
 <body>
-<a href="/upload/page">文件上传</a>
-<a href="/download/page">文件下载</a>
+<h1>文件下载</h1>
+<form method="post" action="/download" >
+    <br/><br/>
+    <input type="submit" value="下载" />
+</form>
 </body>
 </html>
