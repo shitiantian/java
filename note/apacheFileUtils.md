@@ -213,16 +213,3 @@
 # 写在最后:
 - `如果喜欢作者，希望可以给作者一个小星星(star)，让更多的人看到，学习到，共同进步。`
 - `所有见解均属于个人理解，如有不对，请各位多多包涵，多多理解！`
-
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md
-
-[]: https://github.com/shitiantian/java/blob/master/note/apacheFileUtils.md

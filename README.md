@@ -9,5 +9,5 @@
   - [从服务器/数据库下载文件](https://github.com/shitiantian/java/blob/master/note/downloadFile.md)
   - [各种流的比较](https://github.com/shitiantian/java/blob/master/note/IoDiff.md)
 # 写在最后:
-- 如果喜欢作者，希望可以给作者一个小星星(star)，让更多的人看到，学习到，共同进步。
-- 所有见解均属于个人理解，如有不对，请各位多多包涵，多多理解！
+- `如果喜欢作者，希望可以给作者一个小星星(star)，让更多的人看到，学习到，共同进步。`
+- `所有见解均属于个人理解，如有不对，请各位多多包涵，多多理解！`
